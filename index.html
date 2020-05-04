@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Midway USA Form Test</title>
+<link rel="stylesheet" type="text/css" href="midwayform.css">
+</head>
+
+<body>
+<section class="full_page">
+  <div class="full_form">
+    <form action="some-other-page.php" class="mid-form">
+      <div class="form_title">Customer Service</div>
+      <p class="form_desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in dolor a leo pulvinar laoreet ac at quam. Donec ut viverra elit. Etiam feugiat finibus fermentum.</p>
+      
+	<div class="form_item">
+        <label for="full_name" class="form_label" required>Full Name</label>
+        <input type="text" class="form_input" name="full_name" id="full_name" placeholder="Enter Full Name" onblur="requiredField(this)" required>
+	</div>
+		
+      <div class="form_item">
+        <label for="email"  class="form_label" required>Email</label>
+        <input type="email" class="form_input" name="email" id="email" placeholder="Enter Your Email" onblur="requiredField(this)" required>
+      </div>
+		
+		<div class="form_item">
+			<label for="questions" class="form_label">How can we help today?</label>
+			<select class="form_input form_input-small" id="questions" name="questions" onchange="display_area(this.value)">
+				<option value="---" >Select an option</option>
+				<option value="question">Question about my order</option>
+				<option value="question">Website Feedback</option>
+				<option value="product">Trouble Finding Product</option>
+			</select>
+		</div>
+      <div class="form_item" id="question_display" style="display: none;">
+        <label for="feedback_text" class="form_label">Questions and Feedback</label><br/>
+        <textarea maxlength="500" name="feedback_text" class="form_input" id="feedback_text" placeholder="Tell us more about your concerns..."></textarea>
+        </div>
+		
+      <div class="form_item" id="product_display" style="display: none;">
+        <label for="product" class="form_label">Product Description</label><br/>
+        <textarea maxlength="500" name="product" class="form_input" id="product" placeholder="Please describe the product you are searching for today."></textarea>
+        </div>
+		
+      <div class="form_item">
+        <input type="submit" value="Submit">
+		</div>
+    </form>
+  </div>
+</section>
+	<script src="midwayform.js"></script>
+</body>
+</html>
